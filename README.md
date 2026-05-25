@@ -3,6 +3,7 @@
 M416 is a modular offline AI voice assistant built using Python, local LLMs, speech recognition, and persistent memory systems.
 
 The assistant supports:
+
 - wake-word activation,
 - natural language understanding,
 - local AI reasoning,
@@ -18,27 +19,32 @@ The project is designed as a local-first AI agent architecture with modular orch
 # Features
 
 ## Voice Interaction
+
 - Wake-word activation ("M416")
 - Speech-to-text command processing
 - Offline text-to-speech responses
 
 ## AI Reasoning
+
 - Local LLM-powered intent parsing
 - Conversational response generation
 - Structured tool routing pipeline
 
 ## Tool Execution
+
 - Open desktop applications
 - Google/web search fallback
 - Time/date retrieval
 - Remembering and Fetching where user items are placed
 
 ## Persistent Memory
+
 - Store custom user memories
 - Retrieve stored contextual information
 - SQLite-backed memory system
 
 ## Assistant Architecture
+
 - Modular orchestration pipeline
 - Intent classification layer
 - Tool abstraction system
@@ -49,20 +55,25 @@ The project is designed as a local-first AI agent architecture with modular orch
 # Tech Stack
 
 ## Core
+
 - Python
 
 ## AI / LLM
+
 - Ollama
 - Qwen2.5:3B
 
 ## Speech
+
 - SpeechRecognition
 - Windows SAPI (offline TTS)
 
 ## Database
+
 - SQLite3
 
 ## Architecture
+
 - Modular tool routing
 - Local-first execution pipeline
 - AI intent orchestration
@@ -74,16 +85,18 @@ The project is designed as a local-first AI agent architecture with modular orch
 ```text
 M416/
 │
-├── main.py          # Main assistant orchestration loop
-├── intent.py        # LLM-powered intent parser
-├── chat.py          # Conversational response generation
-├── tools.py         # System tools and automation
-├── memo.py          # SQLite memory system
-├── voice.py         # Offline text-to-speech layer
+├── main.py              # Main assistant orchestration loop
+├── intent.py            # LLM-powered intent parser
+├── chat.py              # Conversational response generation
+├── tools.py             # System tools and automation
+├── memo.py              # SQLite memory system
+├── voice.py             # Offline text-to-speech layer
 │
-├── memory.db        # Persistent assistant memory
+├── requirements.txt     # Project dependencies
 ├── README.md
-└── .gitignore
+├── .gitignore
+│
+└── venv/                # Virtual environment (ignored)
 ```
 
 ---
@@ -108,6 +121,7 @@ python -m venv venv
 Activate:
 
 ### Windows
+
 ```bash
 source venv/Scripts/activate
 ```
