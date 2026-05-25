@@ -1,0 +1,6 @@
+ollama==0.6.2
+pocketsphinx==5.1.0
+PyAudio==0.2.14
+pypiwin32==223
+pywin32==311
+SpeechRecognition==3.16.1
