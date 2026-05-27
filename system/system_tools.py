@@ -1,5 +1,7 @@
 import os
+import pyautogui
 from datetime import datetime
+from browser.browser_manager import browser_manager
 
 def open_app(app_name):
     act = f"Opening {app_name}"
@@ -15,13 +17,14 @@ def open_app(app_name):
         case "google":
             os.system('start brave "https://www.google.com"')
         case "vscode":
-            os.system('code')
+            os.system("code")
         case "notepad":
             os.system("notepad")
         case _:
             os.system(f'start brave "https://www.google.com/search?q={app_name}"')
             act = f"Cant Find {app_name}, Searching on Web"
     return act
+
 
 def get_datetime(kind):
     now = datetime.now()
@@ -33,3 +36,25 @@ def get_datetime(kind):
     else:
         act = "Invalid datetime request"
     return act
+
+
+def web_search(query):
+    browser_manager.open_url(
+        f"https://www.google.com/search?q={query}"
+    )
+    return f"Searching Google for {query}"
+
+
+def increase_volume():                    #set_max/min_volume, how much to inc/dec
+    pyautogui.press("volumeup")
+    return "Volume increased"
+
+
+def decrease_volume():
+    pyautogui.press("volumedown")
+    return "Volume decreased"
+
+
+def play_pause_media():
+    pyautogui.press("space")
+    return "Toggled media playback"
