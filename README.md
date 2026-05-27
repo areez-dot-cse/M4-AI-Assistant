@@ -55,45 +55,52 @@ Voice Command:
 
 ### Voice Interaction
 
-- Wake-word based activation
-- Speech recognition using microphone input
-- Real-time spoken responses
+* Wake-word based activation
+* Continuous speech recognition
+* Real-time spoken responses
+* Fully hands-free interaction workflow
 
-### AI-Powered Planning
+### Multiple Chained Commands
 
-- LLM-based intent routing
-- Dynamic execution plan generation
-- Tool validation before execution
-- Multi-step command chaining
+* Execute multi-step workflows from a single voice command
+* Chain browser actions, application control, and memory retrieval
+* Natural language → structured tool execution pipeline
+* LLM-generated JSON execution planning using Ollama + Qwen 2.5
 
-### Browser Automation
+### Tool-Based Execution Architecture
 
-- Open and control websites
-- Search YouTube
-- Play videos automatically
-- Click webpage elements
-- Type text into webpages
-- Extract webpage text
-- Runtime browser awareness
+* Modular planner-validator-executor pipeline
+* Centralized tool registry and management
+* Execution validation before tool invocation
+* Safe and deterministic AI-driven operations
+
+### Browser Automation & Context Awareness
+
+* Open and control websites
+* Search and automate YouTube playback
+* Click webpage elements and type text
+* Extract webpage content dynamically
+* Runtime browser context awareness
+* Access current URLs, page titles, and clickable elements
 
 ### System Automation
 
-- Open applications
-- Web searching
-- Volume control
-- Media play/pause control
+* Open desktop applications
+* Execute web searches
+* Volume and media playback control
+* Keyboard interaction automation
 
-### Persistent Memory
+### Persistent Contextual Memory
 
-- Store and recall user memories
-- SQLite-based long-term storage
+* Store and recall user-defined information
+* SQLite-backed long-term memory storage
+* Natural language contextual memory retrieval
 
 ### Conversational AI
 
-- Natural short-form assistant replies
-- Voice-optimized responses
-
----
+* Local LLM-powered assistant responses
+* Voice-optimized short-form replies
+* Fully local inference using Ollama + Qwen 2.5
 
 ## Architecture
 
@@ -267,25 +274,37 @@ Explain black holes briefly
 
 ## Design Highlights
 
-### Modular Architecture
+### Structured AI Execution Pipeline
 
-The project is divided into independent subsystems — AI, Browser, Memory, Core execution, and System automation.
+Natural language voice commands are converted into structured JSON execution plans using Ollama + Qwen 2.5, enabling deterministic AI-driven task execution instead of direct raw LLM actions.
+
+### Multi-Step Chained Workflows
+
+The assistant can autonomously orchestrate chained multi-tool workflows from a single utterance, including browser navigation, YouTube automation, application control, and contextual memory retrieval.
+
+### Planner–Validator–Executor Architecture
+
+A modular planner-validator-executor pipeline ensures all AI-generated execution plans are structurally validated before tool invocation for safe and controlled system operations.
+
+### Centralized Tool Orchestration
+
+All capabilities are exposed through a centralized tool registry, allowing dynamic tool execution, modular extensibility, and controlled orchestration of browser, memory, and system actions.
+
+### Runtime Browser Context Awareness
+
+The assistant maintains live browser awareness through Playwright, enabling execution-time interaction with current URLs, page titles, clickable elements, and active webpage state.
+
+### Persistent Contextual Memory
+
+SQLite-backed persistent memory enables natural language storage and retrieval of contextual user information across interactions.
 
 ### Persistent Browser Sessions
 
-A centralized `BrowserManager` maintains a shared Playwright browser session across commands.
+A centralized `BrowserManager` maintains shared Playwright browser sessions across commands, preserving runtime browser state between interactions.
 
-### Tool Registry Pattern
+### Fully Local AI Inference
 
-Tools are dynamically registered and executed through a centralized registry system.
-
-### Runtime Context Awareness
-
-The planner receives live browser state such as the current URL and active page title.
-
-### Local AI Inference
-
-The assistant runs fully locally using Ollama and Qwen 2.5 — no external API calls required.
+The entire assistant runs locally using Ollama and Qwen 2.5 with zero external AI API dependencies.
 
 ---
 
@@ -362,7 +381,7 @@ python main.py
 - Improved screen interaction
 - Enhanced conversational memory
 - Cross-platform support
-
+- Authentication keyword for administrator tasks
 ---
 
 ## Disclaimer
