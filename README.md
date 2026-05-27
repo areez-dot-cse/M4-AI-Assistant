@@ -333,7 +333,13 @@ Download Ollama from [https://ollama.com](https://ollama.com), then pull the mod
 ollama pull qwen2.5:3b
 ```
 
-### 6. Run the Assistant
+### 6 Install Playwright Browsers
+
+```bash
+playwright install
+```
+
+### 7. Run the Assistant
 
 ```bash
 python main.py
