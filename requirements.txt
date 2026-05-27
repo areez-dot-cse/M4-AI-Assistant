@@ -1,6 +1,8 @@
 ollama==0.6.2
-pocketsphinx==5.1.0
-PyAudio==0.2.14
-pypiwin32==223
-pywin32==311
+playwright==1.60.0
 SpeechRecognition==3.16.1
+PyAudio==0.2.14
+PyAutoGUI==0.9.54
+pywin32==311
+pocketsphinx==5.1.0
+psutil==7.2.2
